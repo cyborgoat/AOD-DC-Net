@@ -3,11 +3,12 @@
 
 ## Title
 
-- Recover hidden information from images protected by various forms of obfuscation or missing information
+Recover hidden information from images protected by various forms of obfuscation or missing information
 
 ## Team
 
 Team Name: Deep Crying
+
 Team Member: Jingsi Chen | Junxiao Guo | Luo Yu | Shuhao Ren
 
 ## Research Problem Statement
@@ -22,31 +23,42 @@ There are some obfuscation techniques considered in are mosaicing, blurring, and
 -  Deep learning based matrix completion (Neurocomputing 2017) 
 -  High-Resolution Image Inpainting using Multi-Scale Neural Patch Synthesis(2017 IEEE Conference on Computer Vision and Pattern Recognition)
 
-## Method (or proposed solutions)
+<div style="page-break-after: always;"></div>
+
+## Method
 
 - CNN
 - GAN
 - Others
 
-## Datasets (the datasets you will be using for your project)
+## Datasets
 
 - [Google Street View Data Set](https://www.crcv.ucf.edu/projects/GMCP_Geolocalization/#Dataset)
 - [ImageNet](http://www.image-net.org/)
 - MNIST
 
 
-## Evaluation (how do you plan to evaluate your solution)
+## Evaluation
 
 - PSNR(Peak signal-to-noise ratio)
 - L1 Loss
 - L2 Loss
 
-## Timeline (when will each part of your methods be completed)
+## Timeline 
+
+- Literatures reading & summay (Estimation: October 20)
+- Build Model (Estimation: November 20)
+- Finish Testing (Estimation: November 25)
+- Reulst & Report (Estimation: December 1)
+
+
+## Division of Work
 
 
 
-## Division of Work (what each member will plan to do)
-
-
+- Jingsi Chen : Model Design, Result Visuliazation
+- Junxiao Guo: Model Design, Model performance Testing
+- Luo Yu: Model Design, Data cleaning and reformating
+- Shuhao Ren: Model Design, Do experiments on different datasets
 
 
