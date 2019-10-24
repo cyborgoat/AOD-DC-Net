@@ -1,19 +1,13 @@
 import datetime
 import numpy as np
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
 import torchvision
-import time
 import sys
 import torchvision.models as models
 import torchvision.transforms as transforms
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-import matplotlib
-# matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 
 train_path = sys.argv[1]
 test_path = sys.argv[2]
