@@ -28,12 +28,15 @@
 #### Small Examples
 
 Clear Image
+
 <img src="imgs/clear_demo1.png " alt="clear_demo" width="400"/>
 
 Mosaic Image
+
 <img src="imgs/mosaic_demo1.png " alt="clear_demo" width="400"/>
 
 Small Sample Distribution
+
 <img src="imgs/data_distribution_demo.png " alt="mosaic_demo" width="400"/>
 
 
