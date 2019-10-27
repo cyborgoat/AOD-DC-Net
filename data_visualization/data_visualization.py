@@ -53,12 +53,5 @@ if __name__ == "__main__":
     test_dataset = torchvision.datasets.ImageFolder(root=test_path, transform=torchvision.transforms.ToTensor())
     test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=8)
     num_samples, num_classes = data_stat(train_dataset)
-<<<<<<< HEAD
     visualize_img(train_dataloader)
     # visualize_stat(num_samples,num_samples)
-=======
-    # visualize_img(train_dataloader)
-    visualize_stat(num_samples, num_samples)
->>>>>>> master
-    # plt.bar(num_samples,num_samples)
-    # plt.show()
