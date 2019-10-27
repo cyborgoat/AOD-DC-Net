@@ -18,4 +18,17 @@
 ### Mosaic
 - Mosaic the middle part of each photo.
 - Each photo has been processed in four different degrees.
-- 
+
+### Small Examples
+
+#### Clear Image
+
+![clear sample](imgs/clear_demo1.png)
+
+#### Mosaic Image
+
+![mosaic sample](imgs/mosaic_demo1.png)
+
+#### Small Sample Distribution
+
+![distribution sample](imgs/data_distribution_demo.png)
