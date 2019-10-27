@@ -9,26 +9,32 @@
 
 ### Data Splitting
 
+- Please refer to folder [data_preprocess](data_preprocess)
 - Used `SubsetRandomSampler` from `torch.utils.data.sampler` to split data
 - Current distribution 7:2:1 (Train:Validation:Test)
 
-## Image blurring
+### Data Visualization
+
+- Please refer to folder [data_preprocess](data_preprocess)
+
+
+### Image blurring
  We will blur the images for model testing purpose by implement mosaic
  
-### Mosaic
+#### Mosaic
 - Mosaic the middle part of each photo.
 - Each photo has been processed in four different degrees.
 
-### Small Examples
+#### Small Examples
 
-#### Clear Image
+Clear Image
 
 ![clear sample](imgs/clear_demo1.png)
 
-#### Mosaic Image
+Mosaic Image
 
 ![mosaic sample](imgs/mosaic_demo1.png)
 
-#### Small Sample Distribution
+Small Sample Distribution
 
 ![distribution sample](imgs/data_distribution_demo.png)
