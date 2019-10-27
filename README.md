@@ -28,13 +28,12 @@
 #### Small Examples
 
 Clear Image
-
-![clear sample](imgs/clear_demo1.png)
+<img src="imgs/clear_demo1.png " alt="clear_demo" width="400"/>
 
 Mosaic Image
-
-![mosaic sample](imgs/mosaic_demo1.png)
+<img src="imgs/mosaic_demo1.png " alt="clear_demo" width="400"/>
 
 Small Sample Distribution
+<img src="imgs/data_distribution_demo.png " alt="mosaic_demo" width="400"/>
 
-![distribution sample](imgs/data_distribution_demo.png)
+
