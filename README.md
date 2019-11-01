@@ -9,13 +9,13 @@
 
 ### Data Splitting
 
-- Please refer to folder [data_preprocess](data_preprocess)
+- Please refer to folder [data_preprocess](preprocessing)
 - Used `SubsetRandomSampler` from `torch.utils.data.sampler` to split data
 - Current distribution 7:2:1 (Train:Validation:Test)
 
 ### Data Visualization
 
-- Please refer to folder [data_preprocess](data_preprocess)
+- Please refer to folder [data_preprocess](preprocessing)
 
 
 ### Image blurring
