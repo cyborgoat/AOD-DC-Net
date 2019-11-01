@@ -7,12 +7,12 @@ import os
 import sys
 import argparse
 import time
-import dataloader
-import net
 import numpy as np
 from torchvision import transforms
 from PIL import Image
 import glob
+import dataloader
+import net
 
 
 def dehaze(hazyimg_path):

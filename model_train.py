@@ -3,6 +3,7 @@ import torch.nn as nn
 import torchvision
 import torch.backends.cudnn as cudnn
 import torch.optim
+from torchvision import transforms
 import os
 import sys
 import argparse
@@ -10,7 +11,6 @@ import time
 import dataloader
 import net
 import numpy as np
-from torchvision import transforms
 
 
 def init_parser():
