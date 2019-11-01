@@ -1,14 +1,7 @@
 import torch
-import torch.nn as nn
 import torchvision
-import torch.backends.cudnn as cudnn
 import torch.optim
-import os
-import sys
-import argparse
-import time
 import numpy as np
-from torchvision import transforms
 from PIL import Image
 import glob
 import dataloader
@@ -32,10 +25,8 @@ def dehaze(hazyimg_path):
 
 
 if __name__ == '__main__':
-
     test_list = glob.glob("test_images/*")
 
     for image in test_list:
-
         dehaze(image)
         print(image, "done!")
