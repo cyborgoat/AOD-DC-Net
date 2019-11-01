@@ -1,30 +1,25 @@
-# Deep Crying: Recovering Blurred Images
+# Deep Crying: Recovering Foggy/Hazy Images
 
 ## Data Extraction
 
 ### Datasets
 - [Google Street View Dataset](https://www.crcv.ucf.edu/projects/GMCP_Geolocalization/#Dataset)
-- MNIST
-- CIFAR10
+- Image Structure: 1281*1025
 
 ### Data Splitting
 
 - Please refer to folder [data_preprocess](preprocessing)
 - Used `SubsetRandomSampler` from `torch.utils.data.sampler` to split data
-- Current distribution 7:2:1 (Train:Validation:Test)
+- Current distribution 8:2 (Train:Validation)
 
 ### Data Visualization
 
 - Please refer to folder [data_preprocess](preprocessing)
 
 
-### Image blurring
- We will blur the images for model testing purpose by implement mosaic
+### Create Foggy Image
+ We will artificially make the images be foggy to train our model and compare the output result.
  
-#### Mosaic
-- Mosaic the middle part of each photo.
-- Each photo has been processed in four different degrees.
-
 #### Small Examples
 
 Clear Image
