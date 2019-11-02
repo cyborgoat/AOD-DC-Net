@@ -29,7 +29,7 @@ def split_validation(image,haze):
     for i in hazeimage:
         
         i = i.split("/")[-1]
-        key = i.split("_")[0] + "_" + image.split("_")[1] + ".jpg"
+        key = i.split("_")[1] + "_" + image.split("_")[2] 
         
         if key in tmp_dict.keys():
             tmp_dict[key].append(i)
