@@ -4,7 +4,7 @@ import torch
 from torch.nn import *
 
 
-class AODNet:
+class AODNet(Module):
 
     def __init__(self):
         super(AODNet, self).__init__()
