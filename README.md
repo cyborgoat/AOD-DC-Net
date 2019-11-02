@@ -25,7 +25,7 @@ $ python3 run_dehazer.py
 
 
 ### Create Foggy Image
- We will artificially make the images be foggy to train our model and compare the output result.
+- Please refer to folder [haze_generator](haze_generator)
  
 #### Small Examples
 
@@ -33,7 +33,7 @@ Clear Image
 
 <img src="imgs/clear_demo1.jpg " alt="clear_demo" width="400"/>
 
-Mosaic Image
+Foggy Image
 
 <img src="imgs/foggy_demo1.jpg " alt="clear_demo" width="400"/>
 
