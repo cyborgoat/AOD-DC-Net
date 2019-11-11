@@ -18,7 +18,7 @@ def dehaze(hazyimg_path):
     data_hazy = data_hazy.to(device).unsqueeze(0)
 
     dehaze_net = net.AODNet().to(device)
-    dehaze_net.load_state_dict(torch.load('snapshots/Epoch0.pt'))
+    dehaze_net.load_state_dict(torch.load('snapshots/dehaze_model.pt'))
 
     clean_image = dehaze_net(data_hazy)
     torchvision.utils.save_image(torch.cat(
