@@ -1,5 +1,12 @@
 # Deep Crying: Recovering Foggy/Hazy Images
 
+## How to Run the code
+
+```
+$ python3 model_train.py
+$ python3 run_dehazer.py
+```
+
 ## Data Extraction
 
 ### Datasets
@@ -18,20 +25,24 @@
 
 
 ### Create Foggy Image
- We will artificially make the images be foggy to train our model and compare the output result.
+- Please refer to folder [haze_generator](haze_generator)
  
 #### Small Examples
 
 Clear Image
 
-<img src="imgs/clear_demo1.png " alt="clear_demo" width="400"/>
+<img src="imgs/clear_demo1.jpg " alt="clear_demo" width="400"/>
 
-Mosaic Image
+Foggy Image
 
-<img src="imgs/mosaic_demo1.png " alt="clear_demo" width="400"/>
+<img src="imgs/foggy_demo1.jpg " alt="clear_demo" width="400"/>
 
-Small Sample Distribution
+First Run of Result
 
-<img src="imgs/data_distribution_demo.png " alt="mosaic_demo" width="400"/>
+**Note**
+  - Left side is the foggy image and right side is result image
+  - The model only ran for 1 epoch from 6 images, so the current result might not be well performed and highly overexposure.
+  
+<img src="imgs/result_demo1.jpg " alt="clear_demo" width="400"/>
 
 
