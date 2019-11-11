@@ -80,10 +80,17 @@ class DataLoader(Dataset):
         
         clear_image = Image.open(image).convert('RGB')
         blur_image = Image.open(haze).convert('RGB')
-        
-        clear_image = torchvision.transforms.ToTensor()(clear_image)
-        blur_image = torchvision.transforms.ToTensor()(blur_image)
-        
+
+        clear_image = clear_image.resize((480,640),Image.ANTIALIAS)
+        blur_image = blur_image.resize((480,640),Image.ANTIALIAS)
+
+        clear_image = np.asarray(clear_image)/255
+        blur_image = np.asarray(blur_image)/255
+
+        clear_image = torch.from_numpy(clear_image).float()
+        blur_image = torch.from_numpy(blur_image).float()
+
+
         return clear_image, blur_image
     
     def __len__(self):
