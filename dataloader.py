@@ -71,11 +71,11 @@ class DataLoader(Dataset):
 
         if mode == "train":
             self.img_list = self.train_inputs
-            print('{}\t\t{}\n'.format('#Images', len(self.train_inputs)))
+            print('{}\t\t{}\n'.format('#Train Images', len(self.train_inputs)))
 
         else:
             self.img_list = self.val_inputs
-            print('{}\t\t{}\n'.format('#Images', len(self.val_inputs)))
+            print('{}\t\t{}\n'.format('#Validation Images', len(self.val_inputs)))
 
     def __getitem__(self, idx):
         image, haze = self.img_list[idx]

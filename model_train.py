@@ -18,7 +18,7 @@ def init_parser():
     parser.add_argument('--num_epochs', type=int, default=5)
     parser.add_argument('--train_batch_size', type=int, default=128)
     parser.add_argument('--val_batch_size', type=int, default=128)
-    parser.add_argument('--num_workers', type=int, default=4)
+    parser.add_argument('--num_workers', type=int, default=1)
     parser.add_argument('--display_iter', type=int, default=1)
     parser.add_argument('--snapshot_iter', type=int, default=1)
     parser.add_argument('--snapshots_folder', type=str, default="snapshots/")
