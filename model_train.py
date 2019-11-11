@@ -39,7 +39,7 @@ def weights_init(m):
 def train(config):
     cuda = torch.cuda.is_available()
     device = torch.device("cuda" if cuda else "cpu")
-    dehaze_net = net.AODNet()
+    dehaze_net = net.AODNet().to(device)
     dehaze_net.apply(weights_init)
 
     train_dataset = dataloader.DataLoader(
