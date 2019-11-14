@@ -1,4 +1,5 @@
 *.pdf
+.metals/
 *.idea/
 localfiles/Dataset/
 localfiles/
