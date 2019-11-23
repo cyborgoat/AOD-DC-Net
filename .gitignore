@@ -8,3 +8,5 @@ papers/
 results/
 data/
 dataset/
+*.__pycache__/
+*.metals/
