@@ -67,7 +67,9 @@ Note
 - The following are examples of generated dark channel prior image for future use
   
 Original Image
+
 <img src="imgs/dark/010017_1.jpg " alt="clean_demo" width="600" height="450"/>
 
 Dark Channel Prior Image
+
 <img src="imgs/dark/dark_010017_1.jpg " alt="clean_demo" width="600" height="450"/>
