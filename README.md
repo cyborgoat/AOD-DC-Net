@@ -1,4 +1,10 @@
-# Deep Crying: Recovering Foggy/Hazy Images
+# An End-to-end Image Dehazing System with Light-weighted CNN And Dark Channel Prior
+
+## Contributors
+
+Instructor: Joseph Konan
+
+Team: Jingsi Chen,Junxiao Guo, Shuhao Ren ,Luo Yu (ordered by last name initials)
 
 ## How to Run the code
 
@@ -27,22 +33,21 @@ $ python3 run_dehazer.py
 ### Create Foggy Image
 - Please refer to folder [haze_generator](haze_generator)
  
-#### Small Examples
+#### Baseline Model Result
 
 Clear Image
 
-<img src="imgs/clear_demo1.jpg " alt="clear_demo" width="400"/>
+<img src="imgs/5_epoches_clear.jpg " alt="clear_demo" width="1000" height="200"/>
 
-Foggy Image
+Hazy Image
 
-<img src="imgs/foggy_demo1.jpg " alt="clear_demo" width="400"/>
+<img src="imgs/5_epoches_hazy.jpg " alt="hazy_demo" width="1000" height="200"/>
 
-First Run of Result
+Baseline Model Result
 
 **Note**
-  - Left side is the foggy image and right side is result image
-  - The model only ran for 1 epoch from 6 images, so the current result might not be well performed and highly overexposure.
+  - The model was trained with 5 epoch from 2300 images.
   
-<img src="imgs/result_demo1.jpg " alt="clear_demo" width="400"/>
+<img src="imgs/5_epoches_clean.jpg " alt="clean_demo" width="1000" height="200"/>
 
 
