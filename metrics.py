@@ -6,11 +6,14 @@ from torch.autograd import Variable
 from torch import optim
 import cv2
 import numpy as np
+from skimage.measure import compare_ssim
+import argparse
+import imutils
 
 
 def psnr(img1_path,img2_path):
-    original = cv2.imread(img1_path)
-    contrast = cv2.imread(img2_path,1)
+    img1 = cv2.imread(img1_path)
+    img2 = cv2.imread(img2_path,1)
     mse = np.mean( (img1 - img2) ** 2 )
     if mse == 0:
         return 100
@@ -19,23 +22,30 @@ def psnr(img1_path,img2_path):
 
 
 def ssim(img1_path,img2_path):
-    npImg1 = cv2.imread(img1_path)
-    npImg2 = cv2.imread(img2_path)
+    # 2. Construct the argument parse and parse the arguments
+    # ap = argparse.ArgumentParser()
+    # ap.add_argument("-f", "--first", required=True, help="Directory of the image that will be compared")
+    # ap.add_argument("-s", "--second", required=True, help="Directory of the image that will be used to compare")
+    # args = vars(ap.parse_args())
 
-    img1 = torch.from_numpy(np.rollaxis(npImg1, 2)).float().unsqueeze(0)/255.0
-    img2 = torch.rand(img1.size())
+    # 3. Load the two input images
+    imageA = cv2.imread(img1_path)
+    imageB = cv2.imread(img2_path)
 
-    if torch.cuda.is_available():
-        img1 = img1.cuda()
-        img2 = img2.cuda()
+    # 4. Convert the images to grayscale
+    grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
+    grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
 
+    # 5. Compute the Structural Similarity Index (SSIM) between the two
+    #    images, ensuring that the difference image is returned
+    (score, diff) = compare_ssim(grayA, grayB, full=True)
+    diff = (diff * 255).astype("uint8")
 
-    img1 = Variable( img1,  requires_grad=False)
-    img2 = Variable( img2, requires_grad = True)
+    # 6. You can print only the score if you want
+    print("SSIM: {}".format(score))
 
-    print(img1.shape)
-    print(img2.shape)
-    # Functional: pytorch_ssim.ssim(img1, img2, window_size = 11, size_average = True)
-    ssim_value = 1-pytorch_ssim.ssim(img1, img2).item()
-    print("Initial ssim:", ssim_value)
-    return ssim_value
+if __name__ == "__main__":
+    psnr_result = psnr("imgs/foggy_demo1.jpg","imgs/foggy_demo1.jpg")
+    print(psnr_result)
+    ssim_result = ssim("imgs/foggy_demo1.jpg","imgs/foggy_demo1.jpg")
+    print(ssim_result)
