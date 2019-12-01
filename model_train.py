@@ -10,8 +10,8 @@ import net
 
 def init_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--path_clearimg', type=str, default="/home/deepcrying_dl/11785-DL-Project/data/train/")
-    parser.add_argument('--path_hazyimg', type=str, default="/home/deepcrying_dl/11785-DL-Project/data/output/")
+    parser.add_argument('--path_clearimg', type=str, default="/home/deepcrying_dl/11785-DL-Project/data/generate_dark_output/")
+    parser.add_argument('--path_hazyimg', type=str, default="/home/deepcrying_dl/11785-DL-Project/data/generate_haze_dark_output/")
     parser.add_argument('--lr', type=float, default=0.0001)
     parser.add_argument('--weight_decay', type=float, default=0.0001)
     parser.add_argument('--grad_clip_norm', type=float, default=0.1)
