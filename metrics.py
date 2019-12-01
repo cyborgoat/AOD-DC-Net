@@ -11,17 +11,17 @@ import argparse
 import imutils
 
 
-def psnr(img1_path,img2_path):
+def psnr(img1_path, img2_path):
     img1 = cv2.imread(img1_path)
-    img2 = cv2.imread(img2_path,1)
-    mse = np.mean( (img1 - img2) ** 2 )
+    img2 = cv2.imread(img2_path, 1)
+    mse = np.mean((img1 - img2) ** 2)
     if mse == 0:
         return 100
     PIXEL_MAX = 255.0
     return 20 * math.log10(PIXEL_MAX / math.sqrt(mse))
 
 
-def ssim(img1_path,img2_path):
+def ssim(img1_path, img2_path):
     # 2. Construct the argument parse and parse the arguments
     # ap = argparse.ArgumentParser()
     # ap.add_argument("-f", "--first", required=True, help="Directory of the image that will be compared")
@@ -43,9 +43,13 @@ def ssim(img1_path,img2_path):
 
     # 6. You can print only the score if you want
     print("SSIM: {}".format(score))
+    return score
+
 
 if __name__ == "__main__":
-    psnr_result = psnr("imgs/foggy_demo1.jpg","imgs/foggy_demo1.jpg")
+    img1_path = "imgs/foggy_demo1.jpg"
+    img2_path = "imgs/foggy_demo1.jpg"
+    psnr_result = psnr(img1_path, img2_path)
     print(psnr_result)
-    ssim_result = ssim("imgs/foggy_demo1.jpg","imgs/foggy_demo1.jpg")
+    ssim_result = ssim(img1_path, img2_path)
     print(ssim_result)
