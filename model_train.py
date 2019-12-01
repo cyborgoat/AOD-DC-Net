@@ -67,10 +67,7 @@ def train(config):
             optimizer.step()
 
             if ((iteration + 1) % config.display_iter) == 0:
-                print("Loss at iteration", iteration + 1, ":", loss.item())
-            if ((iteration + 1) % config.snapshot_iter) == 0:
-                torch.save(dehaze_net.state_dict(),
-                           config.snapshots_folder + "Epoch" + str(epoch) + '.pt')
+                print("Epoch ", epoch + 1, ": Loss at iteration", iteration + 1, ":", loss.item())
 
         # Validation Stage
         for iter_val, (clear_img, hazy_img) in enumerate(val_loader):
@@ -80,7 +77,7 @@ def train(config):
             torchvision.utils.save_image(torch.cat(
                 (hazy_img, clean_image, clear_img), 0), config.sample_output_folder + str(iter_val + 1) + ".jpg")
         torch.save(dehaze_net.state_dict(),
-                   config.snapshots_folder + "dehaze_model.pt")
+                   config.snapshots_folder + "Epoch" + str(epoch + 1) + '.pt')
 
 
 if __name__ == "__main__":
