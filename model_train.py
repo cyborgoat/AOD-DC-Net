@@ -53,7 +53,7 @@ def train(config):
     criterion = nn.MSELoss().to(device)
     # optimizer = torch.optim.Adam(dehaze_net.parameters(
     # ), lr=config.lr, weight_decay=config.weight_decay)
-    optimizer = torch.optim.SGD(dehaze_net.parameters(
+    optimizer = torch.optim.RMSprop(dehaze_net.parameters(
     ), lr=config.lr, weight_decay=config.weight_decay)
     dehaze_net.train()
     for epoch in range(config.num_epochs):
@@ -69,7 +69,7 @@ def train(config):
             optimizer.step()
 
             if ((iteration + 1) % config.display_iter) == 0:
-                print("Epoch ", epoch + 1, ": Loss at iteration", iteration + 1, ":", loss.item())
+                print("Epoch", epoch + 1, ": Loss at iteration", iteration + 1, ":", loss.item())
 
         # Validation Stage
         for iter_val, (clear_img, hazy_img) in enumerate(val_loader):
