@@ -51,7 +51,9 @@ def train(config):
     val_loader = torch.utils.data.DataLoader(
         val_dataset, batch_size=config.val_batch_size, shuffle=True, num_workers=config.num_workers, pin_memory=True)
     criterion = nn.MSELoss().to(device)
-    optimizer = torch.optim.Adam(dehaze_net.parameters(
+    # optimizer = torch.optim.Adam(dehaze_net.parameters(
+    # ), lr=config.lr, weight_decay=config.weight_decay)
+    optimizer = torch.optim.SGD(dehaze_net.parameters(
     ), lr=config.lr, weight_decay=config.weight_decay)
     dehaze_net.train()
     for epoch in range(config.num_epochs):
