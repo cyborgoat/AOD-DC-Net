@@ -1,19 +1,18 @@
 import torch
-import torch.nn as nn
 import torchvision
 import torch.optim
 import os
 import argparse
 import dataloader
 import net
-import ssim.pytorch_ssim
+import pytorch_ssim
 
 
 def init_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('--path_clearimg', type=str, default="/home/deepcrying_dl/11785-DL-Project/data/train/")
     parser.add_argument('--path_hazyimg', type=str, default="/home/deepcrying_dl/11785-DL-Project/data/output/")
-    parser.add_argument('--lr', type=float, default=0.001)
+    parser.add_argument('--lr', type=float, default=0.0005)
     parser.add_argument('--weight_decay', type=float, default=0.0001)
     parser.add_argument('--grad_clip_norm', type=float, default=0.1)
     parser.add_argument('--num_epochs', type=int, default=15)
@@ -52,7 +51,7 @@ def train(config):
     val_loader = torch.utils.data.DataLoader(
         val_dataset, batch_size=config.val_batch_size, shuffle=True, num_workers=config.num_workers, pin_memory=True)
     # criterion = nn.MSELoss().to(device)
-    criterion = ssim.pytorch_ssim.SSIM(window_size=11)
+    criterion = pytorch_ssim.SSIM(window_size=11)
     optimizer = torch.optim.Adam(dehaze_net.parameters(
     ), lr=config.lr, weight_decay=config.weight_decay)
     # optimizer = torch.optim.SGD(dehaze_net.parameters(
